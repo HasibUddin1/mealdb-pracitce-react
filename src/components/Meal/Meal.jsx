@@ -1,8 +1,12 @@
 import React from 'react';
 import './Meal.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBowlFood } from '@fortawesome/free-solid-svg-icons'
 
 const Meal = (props) => {
-    console.log(props)
+    // console.log(props)
+    const { handleAddToList } = props
+
     const { strArea, strMealThumb, strCategory, strMeal } = props.meal
     return (
         <div className='meal-container rounded-xl'>
@@ -12,7 +16,7 @@ const Meal = (props) => {
                 <h4 className='text-xl font-semibold'>Place: {strArea}</h4>
                 <h4 className='text-xl font-semibold mb-5'>Category: {strCategory}</h4>
             </div>
-            <button className='bg-[#FFE0B3] hover:bg-orange-500 ease-in-out duration-200 w-full h-12 btn-add'>Add to List</button>
+            <button onClick={() => handleAddToList(strMeal)} className='bg-[#FFE0B3] hover:bg-orange-500 ease-in-out duration-200 w-full h-12 btn-add'>Add to List <FontAwesomeIcon icon={faBowlFood} /></button>
         </div>
     );
 };
