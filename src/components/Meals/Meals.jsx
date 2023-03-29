@@ -21,9 +21,9 @@ const Shop = () => {
                     meals.map(meal => <Meal key={meal.idMeal} meal={meal} handleAddToList={handleAddToList}></Meal>)
                 }
             </div>
-            <div>
+            <div className='bg-[#FFE0B3] p-5 h-screen selected-meals-container'>
                 <h1 className='text-4xl font-semibold mb-5'>Selected Meals</h1>
-                <h2 className='text-2xl font-semibold'>Meal Name: <span id='meal-name-container'></span></h2>
+                <h2 className='text-2xl font-semibold'>Meal Name: <span id='meal-name-container' className='font-normal'></span></h2>
             </div>
         </div>
     );
